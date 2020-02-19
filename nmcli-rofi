@@ -78,8 +78,10 @@ function menu () {
 
 function rofi_cmd () {
   # don't repeat lines with uniq -u
-  echo -e "$1" | uniq -u | rofi -dmenu -p "Wi-Fi SSID" -lines "$LINENUM" \
-    -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT" -width "$RWIDTH"
+  # edited lines because i cant fit all those wifies in cafe on screen
+  echo -e "$1" | uniq -u | rofi -dmenu -p "Wi-Fi SSID" -lines "25" \
+    -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT" -width "$RWIDTH" \
+    -scroll_method 1
 }
 
 function rofi_menu () {
